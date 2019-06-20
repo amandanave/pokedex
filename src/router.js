@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Rhymesaurus from '@/views/Rhymesaurus'
-// Imported AdjForNoun component
-import AdjForNoun from '@/views/AdjForNoun'
+import Pokedex from '@/views/Pokedex'
+
 
 Vue.use(Router)
 
@@ -10,14 +9,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'rhymesaurus',
-      component: Rhymesaurus
+      name: 'pokedex',
+      component: Pokedex
     },
-      // Added new route definition
-      {
-      path: '/adjfornoun',
-      name: 'adjfornoun',
-      component: AdjForNoun
-      }
   ]
 })

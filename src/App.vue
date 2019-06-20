@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1>Fun With Datamuse</h1>
+    <h1>Pokedex</h1>
     <router-view/>
   </div>
 </template>
