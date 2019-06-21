@@ -1,6 +1,12 @@
 <template>
   <div class="pokedex">
     <h2>Pokedex</h2>
+    <form v-on:submit.prevent="findPokemon">
+      <p>Find Pokemon who's name starts with <input type="text" v-model="name"> <button type="submit">Search</button></p>
+    </form>
+    <ul>
+      <li v-for="(item, index) in pokelist" :key="index">{{ item.name }} <button v-on:click="goToPokeimage(item)">Get Image</button></li>
+    </ul>
   </div>
 </template>
 
@@ -14,31 +20,48 @@ export default {
     return {
       results: null,
       errors: [],
-      phrase: '',
-      rhyme: ''
+      name: "",
+      pokelist: null
     }
-  },
-    // Created the findWords method
+    },
     methods: {
-      findWords: function(){
-      axios.get('https://api.datamuse.com/words', {
+    findPokemon: function(){
+      this.pokelist = this.results.filter(result => {
+        if (result.name.startsWith(this.name)){
+          return result
+        }
+      })
+    },
+    goToPokeimage: function(item){
+      this.$router.push({ name: 'pokeimage', params: { item } })
+    }
+    },
+    created: function () {
+        axios.get('https://pokeapi.co/api/v2/pokemon', {
         params: {
-          ml: this.phrase,
-          rel_rhy:this.rhyme
+          limit: 151
         }
       })
       .then(response =>{
-        this.results = response.data
+        this.results = response.data.results
       })
       .catch(error =>{
         this.errors.push(error)
       })
-    }
     }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+ .pokedex li {
+   list-style-type: none;
+   text-align: center;
+ }
 
+ .pokedex ul {
+   width: 30%;
+   margin: 0 auto;
+   background-color: aquamarine;
+ }
 </style>
