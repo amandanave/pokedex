@@ -17,6 +17,7 @@ export default {
   text-align: center;
   color: #FFFFFF;
   margin-top: 60px;
+  background-color: #FF0000;
 }
 
 body, html {
