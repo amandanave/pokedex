@@ -1,11 +1,14 @@
 <template>
   <div class="pokedex">
-    <h2>Pokedex</h2>
+    <img
+      src="./../assets/logo-pixel.gif"
+      alt="pokémon">
+      <p>Welcome to the Pokedex name and image finder!</p>
     <form v-on:submit.prevent="findPokemon">
       <p>Find Pokemon who's name starts with <input type="text" v-model="name"> <button type="submit">Search</button></p>
     </form>
     <ul>
-      <li v-for="(item, index) in pokelist" :key="index">{{ item.name }} <button v-on:click="goToPokeimage(item)">Get Image</button></li>
+      <li v-for="(item, index) in pokelist" :key="index">{{ item.name }} <button v-on:click="goToPokeimage(item)" class="nes-btn">Get Image</button></li>
     </ul>
   </div>
 </template>
@@ -62,6 +65,6 @@ export default {
  .pokedex ul {
    width: 30%;
    margin: 0 auto;
-   background-color: aquamarine;
+   background-color: red;
  }
 </style>

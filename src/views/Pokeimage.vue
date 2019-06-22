@@ -1,6 +1,8 @@
 <template>
   <div class="pokeimage">
-    <h2>Pokeimage</h2>
+    <img
+      src="./../assets/logo-pixel.gif"
+      alt="pokémon">
     <h3 v-if="item">{{ item.name }}</h3>
         <div>
             <img :src="image" :alt="item.name">
@@ -32,7 +34,7 @@ export default {
       })
       .then(response =>{
         this.results = response.data
-        this.image = this.results.sprites.back_default
+        this.image = this.results.sprites.front_default
       })
       .catch(error =>{
         this.errors.push(error)
@@ -51,6 +53,6 @@ export default {
  .pokedex ul {
    width: 30%;
    margin: 0 auto;
-   background-color: aquamarine;
+   background-color: red;
  }
 </style>
