@@ -18,6 +18,10 @@ export default {
   color: #FFFFFF;
   margin-top: 60px;
 }
+html {
+  background-color: red;
+}
+
 body {
   background-color: red;
 }
