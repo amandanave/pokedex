@@ -24,7 +24,7 @@ body, html {
   margin: 0;
   width: 100%;
   min-height: 100%;
-  background-color: red;
+  background-color: #FF0000;
 }
 
 </style>
