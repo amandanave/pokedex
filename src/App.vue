@@ -19,7 +19,12 @@ export default {
   margin-top: 60px;
 }
 
-body {
+body, html {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
   background-color: red;
 }
+
 </style>
