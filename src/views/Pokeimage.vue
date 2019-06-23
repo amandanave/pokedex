@@ -3,6 +3,7 @@
     <img
       src="./../assets/logo-pixel.gif"
       alt="pokémon">
+      <p><router-link to="/">Pokedex Home</router-link></p>
     <h3 v-if="item">{{ item.name }}</h3>
         <div>
             <img :src="image" :alt="item.name">
