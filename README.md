@@ -1,12 +1,7 @@
 # Using APIs to Provide Data
 
-> Practicing using APIs to retreive data in an application.
-
-It is very common to use third-party data APIs to enhance our applications. It
-is also common to build our own API services and then reveal even custom logic
-and features through a standardized API interface. This type of application
-architecture has become very popular online, and it is a fundamental technique
-in building website and web-based applications.
+> This app is based off of the Pokedex using the Pok&#233; API (https://pokeapi.co/). 
+In this app, users are able to search for a list of pokemon using the first letter of their name and select a pokemon to view an image of them.
 
 This project is designed to practice creating simple API requests from within a
 Vue.js application. We will make requests and use them to populate information
